@@ -6,4 +6,4 @@ Feature: check all the links in the header work fine
 
     Given I should be on the mobile page
     Then I click alert button
-  #  Then I should see a pop up window
+    Then I should see a pop up window with title "cool title"

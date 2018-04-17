@@ -58,10 +58,11 @@
         <htmlReportDir></htmlReportDir>
         <download.folder></download.folder>
         <appium.version>1.7.1</appium.version>
-        <platform.version>11.1</platform.version>
-        <device.name>iPhone 8</device.name>
+        <platform.version>11.3</platform.version>
+        <device.name>iPhone X</device.name>
         <appium.server.url>http://127.0.0.1:4723/wd/hub</appium.server.url>
         <app.absolute.path>/Users/krisma/test.app</app.absolute.path>
+        <automation.name></automation.name>
         <app.relative.path></app.relative.path>
 
     </properties>
@@ -81,16 +82,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.8.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.8.2</version>
-        </dependency>
+
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -104,11 +96,6 @@
             <version>4.12</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.4.0</version>
-        </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -166,29 +153,7 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>net.masterthought</groupId>
-            <artifactId>cucumber-reporting</artifactId>
-            <version>3.10.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>6.0.0-BETA4</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>6.0.0-BETA4</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.thyxkris</groupId>
-            <artifactId>mui-automation</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
 
     <build>

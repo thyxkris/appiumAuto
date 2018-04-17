@@ -1,5 +1,6 @@
 package steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import libraries.infrastructure.ScenarioContext;
@@ -31,6 +32,11 @@ public class MobilePageStepsDef extends BaseStepsDef {
     @Then("^I click alert button$")
     public void iClickAlertButton() throws Throwable {
         mobilePageModel.clickAlert();
+    }
+
+    @Then("^I should see a pop up window with title \"([^\"]*)\"$")
+    public void iShouldSeeAPopUpWindowWithTitle(String arg0) throws Throwable {
+        assertEquals("to check the title","Cool title",mobilePageModel.getTextFromCoolTitle());
     }
 //
 }

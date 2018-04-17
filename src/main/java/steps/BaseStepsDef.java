@@ -41,8 +41,7 @@ public abstract class BaseStepsDef {
 
     //declare page models, everytime when adding a new page, must declare it here
     //protected  SearchPageModel searchPageModel;
-    protected WhyOutdoorsPageModel whyOutdoorsPageModel;
-    protected ContactPageModel contactPageModel;
+
     protected MobilePageModel mobilePageModel;
 
 

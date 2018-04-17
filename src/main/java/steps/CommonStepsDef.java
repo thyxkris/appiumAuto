@@ -16,9 +16,7 @@ import java.io.IOException;
  * Created by makri on 6/09/2017.
  */
 public class CommonStepsDef extends BaseStepsDef {
-    private SearchPageStepsDef searchPageStepsDef;
-    private WhyOutdoorsPageStepsDef whyOutdoorsPageStepsDef;
-    private ContactPageStepsDef contactPageStepsDef;
+
     private MobilePageStepsDef mobilePageStepsDef;
 
 
@@ -44,12 +42,5 @@ public class CommonStepsDef extends BaseStepsDef {
         super.tearUp();
     }
 
-    @When("^I click \"([^\"]*)\" on the header$")
-    public void iClickOnTheHeader(String linkText) throws Throwable {
-        if(null == scenarioContext.getCurrentPage())
-        {
-            searchPageStepsDef = new SearchPageStepsDef(scenarioContext);
-        }
-        scenarioContext.getCurrentPage().goToNextPageByLinkText(linkText);
-    }
+
 }
