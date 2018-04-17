@@ -57,10 +57,10 @@
         <first.run.directory>target/cucumber-parallel/</first.run.directory>
         <htmlReportDir></htmlReportDir>
         <download.folder></download.folder>
-        <appium.version>1.6</appium.version>
-        <platform.version>10.1</platform.version>
-        <device.name>iPhone 6</device.name>
-        <appium.server.url>http://10.64.21.242:4723/wd/hub</appium.server.url>
+        <appium.version>1.7.1</appium.version>
+        <platform.version>11.1</platform.version>
+        <device.name>iPhone X</device.name>
+        <appium.server.url>http://127.0.0.1:4723/wd/hub</appium.server.url>
         <app.absolute.path>/Users/krisma/test.app</app.absolute.path>
         <app.relative.path></app.relative.path>
 
