@@ -59,7 +59,7 @@
         <download.folder></download.folder>
         <appium.version>1.7.1</appium.version>
         <platform.version>11.1</platform.version>
-        <device.name>iPhone X</device.name>
+        <device.name>iPhone 8</device.name>
         <appium.server.url>http://127.0.0.1:4723/wd/hub</appium.server.url>
         <app.absolute.path>/Users/krisma/test.app</app.absolute.path>
         <app.relative.path></app.relative.path>
