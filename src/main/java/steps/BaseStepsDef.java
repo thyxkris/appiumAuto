@@ -3,18 +3,15 @@ package steps;
 import cucumber.api.Scenario;
 import helpers.ConfigHelper;
 import infrastructure.DriversFactory;
-import infrastructure.KAppiumDriver;
-import infrastructure.KWebDriver;
 import libraries.helpers.TestConstantData;
 import libraries.infrastructure.ScenarioContext;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.*;
+import pages.BaseModel;
+import pages.BasePageModel;
+import pages.LaunchPageModel;
+import pages.RegistrationPageModel;
 
 import java.awt.*;
 import java.io.BufferedWriter;
@@ -23,13 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
-import static java.util.concurrent.TimeUnit.SECONDS;
 
 
 /**
@@ -40,15 +31,14 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public abstract class BaseStepsDef {
 
     //declare page models, everytime when adding a new page, must declare it here
-    //protected  SearchPageModel searchPageModel;
-
-    protected MobilePageModel mobilePageModel;
-
+    protected LaunchPageModel launchPageModel;
+    protected RegistrationPageModel registrationPageModel;
 
 
     //below no need to modify
     protected Logger logger;
     protected ScenarioContext scenarioContext;
+
     //here is generic, should be put into another super: BaseStep
     public BaseStepsDef(ScenarioContext scenarioContext) throws Throwable {
         this.scenarioContext = scenarioContext;
@@ -88,12 +78,6 @@ public abstract class BaseStepsDef {
 
     abstract public void IShouldBeOnThePage() throws Throwable;
 
-    public void setBrowserSize(int width, int height) {
-        //scenarioContext.getAppiumDriver().setBrowserResolution(width, height);
-    }
-
-
-
 
     //below is project-related,
     public void setup(Scenario scenario) throws IOException {
@@ -104,20 +88,13 @@ public abstract class BaseStepsDef {
         logger.info("starting -" + scenario.getName());
         //scenarioContext.setLogger(logger);
 
-        //initialize webdriver
-
+        //initialize appium driver
         scenarioContext.setAppiumDriver(DriversFactory.getDriver());
         scenarioContext.getAppiumDriver().setLogger(logger);
-        outputConfigInfo();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //takeScreenshotInReportsAndSaveOnDisk();
 
-//        launchSearchPage();
-     //   scenarioContext.getAppiumDriver().manage().deleteAllCookies();
+        outputConfigInfo();
+        launchApp();
+
     }
 
     public String getScenarioId() {
@@ -153,7 +130,13 @@ public abstract class BaseStepsDef {
 
     public void outputConfigInfo() {
 
-        logger.info("BrowserType - " + helpers.ConfigHelper.getBrowserType());
+        logger.info("DriverType - " + helpers.ConfigHelper.getDriverType());
+        logger.info("platformName - " + helpers.ConfigHelper.getPlatformVersion());
+        logger.info("getAutomationName - " + helpers.ConfigHelper.getAutomationName());
+        logger.info("getAppPath - " + helpers.ConfigHelper.getAppPath());
+        logger.info("getAppiumVersion - " + helpers.ConfigHelper.getAppiumVersion());
+        logger.info("getDeviceName - " + helpers.ConfigHelper.getDeviceName());
+
         logger.info("getCurrentWorkingDir - " + helpers.ConfigHelper.getCurrentWorkingDir());
         logger.info("getTemplateDir - " + helpers.ConfigHelper.getTemplateDir());
         logger.info("getTestResourcesFolderPath - " + helpers.ConfigHelper.getTestResourcesFolderPath());
@@ -167,20 +150,14 @@ public abstract class BaseStepsDef {
 
     }
 
-    public void launchSearchPage() {
+    public void launchApp() throws IOException {
 
-        String url = libraries.helpers.ConfigHelper.getStartingURL();
-        scenarioContext.getAppiumDriver().navigate().to(url);
+        //String url = libraries.helpers.ConfigHelper.getStartingURL();
+        //scenarioContext.getAppiumDriver().navigate().to(url);
         scenarioContext.getAppiumDriver().manage().timeouts().implicitlyWait(TestConstantData.NORMAL_WAIT_INTERNAL, TimeUnit.MILLISECONDS);
+        //takeScreenshotInReportsAndSaveOnDisk();
 
     }
-
-    public void launchSearchPage(String url) {
-
-        scenarioContext.getAppiumDriver().navigate().to(url);
-        scenarioContext.getAppiumDriver().manage().timeouts().implicitlyWait(TestConstantData.NORMAL_WAIT_INTERNAL, TimeUnit.MILLISECONDS);
-    }
-
 
 
     public void tearUp() throws IOException {
@@ -193,7 +170,7 @@ public abstract class BaseStepsDef {
 
         scenarioContext.getScenario().write(scenarioContext.getScenario().getStatus() + scenarioContext.getScenario().getName() + scenarioContext.getScenario().getSourceTagNames());
         scenarioContext.dispose();
-        //  KWebDriver.quit();
+        scenarioContext.getAppiumDriver().quit();
 
     }
 
@@ -202,8 +179,6 @@ public abstract class BaseStepsDef {
         FileWriter fw = null;
 
         try {
-
-            // String data = " This is new content";
 
             File file = new File(rerunFile);
 
@@ -221,7 +196,6 @@ public abstract class BaseStepsDef {
 
             bw.write(data);
 
-            //  System.out.println("Done");
 
         } catch (IOException e) {
 

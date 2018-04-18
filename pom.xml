@@ -61,7 +61,7 @@
         <platform.version>11.3</platform.version>
         <device.name>iPhone X</device.name>
         <appium.server.url>http://127.0.0.1:4723/wd/hub</appium.server.url>
-        <app.absolute.path>/Users/krisma/test.app</app.absolute.path>
+        <app.absolute.path>/Users/krisma/Library/Developer/Xcode/DerivedData/LatitudeApp-eithsqwthzfpdidtotryprsutnkl/Build/Products/Debug-iphonesimulator/LatitudeApp.app</app.absolute.path>
         <automation.name></automation.name>
         <app.relative.path></app.relative.path>
 

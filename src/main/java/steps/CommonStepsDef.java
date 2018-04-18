@@ -1,14 +1,9 @@
 package steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.When;
 import libraries.infrastructure.ScenarioContext;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import pages.MobilePageModel;
 
 import java.io.IOException;
 
@@ -17,7 +12,7 @@ import java.io.IOException;
  */
 public class CommonStepsDef extends BaseStepsDef {
 
-    private MobilePageStepsDef mobilePageStepsDef;
+    private LaunchPageStepsDef launchPageStepsDef;
 
 
     public CommonStepsDef(ScenarioContext scenarioContext) throws Throwable {

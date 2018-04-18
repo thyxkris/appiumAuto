@@ -11,13 +11,13 @@ public class BaseModel extends Base{
     protected ScenarioContext scenarioContext;
 
 
-    public BaseModel(ScenarioContext scenarioContext, String title) {
-        super(scenarioContext, title);
+    public BaseModel(ScenarioContext scenarioContext, String accessibilityId) {
+        super(scenarioContext, accessibilityId);
         this.scenarioContext = scenarioContext;
     }
 
-    public BaseModel(ScenarioContext scenarioContext, String title, String url) {
-        super(scenarioContext, title, url);
+    public BaseModel(ScenarioContext scenarioContext, String accessibilityId, String url) {
+        super(scenarioContext, accessibilityId, url);
         this.scenarioContext = scenarioContext;
 
     }
