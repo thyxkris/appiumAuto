@@ -16,7 +16,7 @@ public class VodQALoginPageModel extends BasePageModel {
     }
 
     public void clikLogin() {
-        new WebDriverWait(driver.getAppiumDriver(), 30).until(ExpectedConditions.
+        new WebDriverWait(driver, 30).until(ExpectedConditions.
                 elementToBeClickable(MobileBy.AccessibilityId("login"))).click();
     }
 

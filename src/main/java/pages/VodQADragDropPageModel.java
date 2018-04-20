@@ -24,10 +24,10 @@ public class VodQADragDropPageModel extends BasePageModel {
 
    public void DragMe()
    {
-       MobileElement dragMe = (MobileElement) new WebDriverWait(driver.getAppiumDriver(), 30)
+       MobileElement dragMe = (MobileElement) new WebDriverWait(driver, 30)
                .until(ExpectedConditions
                        .elementToBeClickable(MobileBy.AccessibilityId("dragMe")));
-       new TouchAction(driver.getAppiumDriver()).press(dragMe).waitAction(Duration.ofMillis(3000))
+       new TouchAction(driver).press(dragMe).waitAction(Duration.ofMillis(3000))
                .moveTo(driver.findElementByAccessibilityId("dropzone").getMobileElement()).release().perform();
 
 

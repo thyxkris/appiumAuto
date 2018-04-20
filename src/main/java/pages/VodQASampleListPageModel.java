@@ -13,11 +13,14 @@ public class VodQASampleListPageModel extends BasePageModel {
     public VodQASampleListPageModel(ScenarioContext scenarioContext) throws Exception {
         super(scenarioContext, "dragAndDrop");
         //Why outdoor? - BuyThisSpace
-        Thread.sleep(5000);
+        //  Thread.sleep(5000);
+        new WebDriverWait(driver, 30).until(ExpectedConditions.
+                elementToBeClickable(MobileBy.AccessibilityId("dragAndDrop")));
     }
 
     public void clickDragAndDrop() {
         driver.findElementByAccessibilityId("dragAndDrop").click();
+        // new WebDriverWait(driver, 30).until(ExpectedConditions.                elementToBeClickable(MobileBy.AccessibilityId("dragAndDrop"))).click();
     }
 
 }
