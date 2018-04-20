@@ -39,9 +39,8 @@ public abstract class BaseStepsDef {
     protected RegistrationPageModel registrationPageModel;
 
     protected VodQALoginPageModel vodQALoginPageModel;
-    protected  VodQASampleListPageModel vodQASampleListPageModel;
-    protected  VodQADragDropPageModel vodQADragDropPageModel;
-
+    protected VodQASampleListPageModel vodQASampleListPageModel;
+    protected VodQADragDropPageModel vodQADragDropPageModel;
 
 
     //below no need to modify
@@ -103,6 +102,10 @@ public abstract class BaseStepsDef {
 
         outputConfigInfo();
         launchApp();
+        scenarioContext.setContextNames(scenarioContext.getAppiumDriver().getContextHandles());
+        // scenarioContext.switchToNative();
+        //scenarioContext.switchToWebView();
+
 
     }
 
