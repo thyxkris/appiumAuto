@@ -1,6 +1,9 @@
 package steps;
 
 import cucumber.api.PendingException;
+
+import cucumber.api.java.en.Given;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import infrastructure.KMobileElement;
@@ -45,5 +48,6 @@ public class RegistrationPageStepsDef extends BaseStepsDef {
         By byTmp= By.xpath("//XCUIElementTypeApplication[@name=\"Latitude\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeTextField/XCUIElementTypeTextField");
         assertEquals("text field number > 0",1, this.scenarioContext.getAppiumDriver().findElements(byTmp).size());
     }
+
 //
 }

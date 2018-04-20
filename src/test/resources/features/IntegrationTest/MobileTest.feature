@@ -1,4 +1,4 @@
-@Int
+@ios
 Feature: check all the links in the header work fine
 
   @id_check_links @pass

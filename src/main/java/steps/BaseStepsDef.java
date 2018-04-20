@@ -8,10 +8,14 @@ import libraries.infrastructure.ScenarioContext;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
+
+import pages.*;
+
 import pages.BaseModel;
 import pages.BasePageModel;
 import pages.LaunchPageModel;
 import pages.RegistrationPageModel;
+
 
 import java.awt.*;
 import java.io.BufferedWriter;
@@ -33,6 +37,11 @@ public abstract class BaseStepsDef {
     //declare page models, everytime when adding a new page, must declare it here
     protected LaunchPageModel launchPageModel;
     protected RegistrationPageModel registrationPageModel;
+
+    protected VodQALoginPageModel vodQALoginPageModel;
+    protected  VodQASampleListPageModel vodQASampleListPageModel;
+    protected  VodQADragDropPageModel vodQADragDropPageModel;
+
 
 
     //below no need to modify

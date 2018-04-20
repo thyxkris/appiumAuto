@@ -16,7 +16,7 @@
         <test.api.debug>false</test.api.debug>
         <failsafe.rerunFailingTestsCount>0</failsafe.rerunFailingTestsCount>
         <selenium.grid.url></selenium.grid.url>
-        <browser.type>ios</browser.type>
+        <driver.type>android</driver.type>
         <pageload.wait.time>200</pageload.wait.time>
         <element.wait.time>15</element.wait.time>
         <implicit.wait.time>5000</implicit.wait.time>
@@ -58,12 +58,12 @@
         <htmlReportDir></htmlReportDir>
         <download.folder></download.folder>
         <appium.version>1.7.1</appium.version>
-        <platform.version>11.3</platform.version>
-        <device.name>iPhone X</device.name>
+        <platform.version></platform.version>
+        <device.name>emulator-5554</device.name>
         <appium.server.url>http://127.0.0.1:4723/wd/hub</appium.server.url>
-        <app.absolute.path>/Users/krisma/Library/Developer/Xcode/DerivedData/LatitudeApp-eithsqwthzfpdidtotryprsutnkl/Build/Products/Debug-iphonesimulator/LatitudeApp.app</app.absolute.path>
+        <app.absolute.path></app.absolute.path>
         <automation.name></automation.name>
-        <app.relative.path></app.relative.path>
+        <app.relative.path>VodQA.apk</app.relative.path>
 
     </properties>
 
