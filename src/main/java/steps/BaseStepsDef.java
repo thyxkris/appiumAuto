@@ -41,6 +41,7 @@ public abstract class BaseStepsDef {
     protected VodQALoginPageModel vodQALoginPageModel;
     protected VodQASampleListPageModel vodQASampleListPageModel;
     protected VodQADragDropPageModel vodQADragDropPageModel;
+    protected MobilePageModel mobilePageModel;
 
 
     //below no need to modify
